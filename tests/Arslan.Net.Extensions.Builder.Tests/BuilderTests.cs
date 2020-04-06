@@ -62,5 +62,13 @@ namespace Arslan.Net.Extensions.Builder {
 
             Assert.Equal(source.Age()-5, target.Age());
         }
+
+        [Fact]
+        public void Implicit_Conversion() {
+            var source = new Person("John", "Doe", 1980, "Male");
+            Person target = source.Set("_birthYear", 1985);
+
+            Assert.Equal(source.GetType().FullName, target.GetType().FullName) ;
+        }
     }
 }

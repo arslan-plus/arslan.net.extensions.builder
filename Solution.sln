@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30001.183
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arslan.Net.Extensions.Builder", "src\Arslan.Net.Extensions.Builder\Arslan.Net.Extensions.Builder.csproj", "{4378FF01-1744-4C0E-B6D7-CAC544BFAB07}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arslan.Net.Extensions.Builder.Tests", "tests\Arslan.Net.Extensions.Builder.Tests\Arslan.Net.Extensions.Builder.Tests.csproj", "{36BE3030-A207-402F-909B-2AE6EF9D6021}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{1AE348CF-5E48-4617-876F-BF4CF4ED1ECB}"
+	ProjectSection(SolutionItems) = preProject
+		shared\SolutionInfo.cs = shared\SolutionInfo.cs
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4378FF01-1744-4C0E-B6D7-CAC544BFAB07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4378FF01-1744-4C0E-B6D7-CAC544BFAB07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4378FF01-1744-4C0E-B6D7-CAC544BFAB07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4378FF01-1744-4C0E-B6D7-CAC544BFAB07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36BE3030-A207-402F-909B-2AE6EF9D6021}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36BE3030-A207-402F-909B-2AE6EF9D6021}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36BE3030-A207-402F-909B-2AE6EF9D6021}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36BE3030-A207-402F-909B-2AE6EF9D6021}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A75F6326-A3BE-46A6-89D5-B73D6C81701D}
+	EndGlobalSection
+EndGlobal

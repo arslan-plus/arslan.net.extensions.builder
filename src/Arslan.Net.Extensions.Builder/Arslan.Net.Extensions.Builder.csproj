@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <RootNamespace>Arslan.Net.Extensions.Builder</RootNamespace>
+        <AssemblyName>arslan.net.extensions.builder</AssemblyName>
+        <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Authors>Selcuk Arslan</Authors>
+        <PackageProjectUrl>https://github.com/arslani/arslan.net.extensions.builder</PackageProjectUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    </PropertyGroup>
+    <ItemGroup>
+        <Compile Include="..\..\shared\SolutionInfo.cs" Link="Properties\SolutionInfo.cs" />
+    </ItemGroup>
+</Project>

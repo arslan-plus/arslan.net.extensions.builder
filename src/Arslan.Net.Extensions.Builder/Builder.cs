@@ -23,26 +23,11 @@ namespace Arslan.Net.Extensions.Builder {
 
             var keys = key.Split('.');
             var property = keys[0];
-            var type = _value.GetType();
             if (keys.Length > 1) {
                 if(!_values.TryGetValue(property, out var builder)) {
-                    var pInfo = BuilderHelper.GetPropertyInfo(type, property, bindingFlags);
-                    if (pInfo != null) {
-                        builder = new Builder<object>(pInfo.GetValue(_value), 1);
-                        _values.Add(property, builder);
-                        builder.Set(key.Substring(property.Length + 1), value, autoCast, bindingFlags);
-                        return this;
-                    }
-
-                    var fInfo = BuilderHelper.GetFieldInfo(type, property, bindingFlags);
-                    if (pInfo != null) {
-                        builder = new Builder<object>(fInfo.GetValue(_value), 2);
-                        _values.Add(property, builder);
-                        builder.Set(key.Substring(property.Length + 1), value, autoCast, bindingFlags);
-                        return this;
-                    }
-
-                    throw new InvalidOperationException();
+                    var (m, i) = BuilderHelper.GetMemberInfo(_value, property, bindingFlags);
+                    builder = new Builder<object>(i, m is PropertyInfo ? 1 : 2);
+                    _values.Add(property, builder);
                 }
 
                 builder.Set(key.Substring(property.Length + 1), value, autoCast, bindingFlags);
@@ -50,31 +35,20 @@ namespace Arslan.Net.Extensions.Builder {
             }
 
 
-            _values.Remove(property);
-          
-            var propertyInfo = BuilderHelper.GetPropertyInfo(type, property, bindingFlags);
-            if (propertyInfo != null) {
-                BuilderHelper.SetPropertyValue(_value, propertyInfo, value, autoCast);
-                return this;
-            }
-
-            var fieldInfo = BuilderHelper.GetFieldInfo(type, property, bindingFlags);
-            if (fieldInfo != null)
-            {
-                BuilderHelper.SetFieldValue(_value, fieldInfo, value, autoCast);
-                return this;
-            }
-
-            throw new InvalidOperationException();
+            _values.Remove(key);
+            var (memberInfo, instance) = BuilderHelper.GetMemberInfo(_value, key, bindingFlags);
+            memberInfo.SetValue(instance, value, autoCast);
+            return this;
         }
 
-        public Builder<T> Set<V>(Expression<Func<T, V>> key, V value, bool autoCast = false, BindingFlags bindingFlags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic) {
+        public Builder<T> Set<V>(Expression<Func<T, V>> key, V value, BindingFlags bindingFlags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic) {
             if (key == null)
                 throw new ArgumentNullException(nameof(key));
 
             var property = key.Body.ToString();
             var keys = property.Split('.');
-            return Set(property.Substring(keys[0].Length + 1), value, autoCast, bindingFlags);
+            property = property.Substring(keys[0].Length + 1);
+            return Set(property, value, false, bindingFlags);
         }
 
         public Builder<T> Patch<I>(I patch, bool autoCast = false, BindingFlags bindingFlags= BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic) where I : class {

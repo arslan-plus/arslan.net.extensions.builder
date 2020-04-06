@@ -1,8 +1,0 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <RootNamespace>Arslan.Net.Extensions.Builder</RootNamespace>
-    <AssemblyName>arslan.net.extensions.builder</AssemblyName>
-  </PropertyGroup>
-</Project>

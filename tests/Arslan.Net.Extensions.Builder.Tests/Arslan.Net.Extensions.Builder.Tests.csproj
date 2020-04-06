@@ -2,9 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-
     <IsPackable>false</IsPackable>
-
     <RootNamespace>Arslan.Net.Extensions.Builder</RootNamespace>
   </PropertyGroup>
 
@@ -16,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Arslan.Net.Extensions.Builder\Arslan.Net.Extensions.Builder.csproj" />
+    <ProjectReference Include="..\..\src\Arslan.Net.Extensions.Builder\Arslan.Net.Extensions.Builder.csproj" />
   </ItemGroup>
 
 </Project>
