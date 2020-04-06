@@ -3,7 +3,7 @@
         <TargetFramework>netstandard2.0</TargetFramework>
         <RootNamespace>Arslan.Net.Extensions.Builder</RootNamespace>
         <AssemblyName>arslan.net.extensions.builder</AssemblyName>
-        <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Authors>Selcuk Arslan</Authors>
         <PackageProjectUrl>https://github.com/arslani/arslan.net.extensions.builder</PackageProjectUrl>
